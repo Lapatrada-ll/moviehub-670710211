@@ -7,7 +7,7 @@ function Register() {
   const [displayName, setDisplayName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
+  const [confirmPassword] = useState('');
   const [error, setError] = useState(null);
   const [status, setStatus] = useState('typing');
   const { register } = useAuth();
