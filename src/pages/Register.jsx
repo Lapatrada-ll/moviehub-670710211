@@ -7,7 +7,6 @@ function Register() {
   const [displayName, setDisplayName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [confirmPassword] = useState('');
   const [error, setError] = useState(null);
   const [status, setStatus] = useState('typing');
   const { register } = useAuth();
@@ -17,11 +16,6 @@ function Register() {
     e.preventDefault();
     setStatus('submitting');
     setError(null);
-    if (password !== confirmPassword) {
-      setError('รหัสผ่านไม่ตรงกัน');
-      return;
-    }
-        setStatus('submitting');
 
     try {
       await register(email, password, displayName);
